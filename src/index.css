@@ -268,16 +268,12 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* font-weight: bold; */
-  /* color: #5C5D5F; */
-  /* font-size:14px; */
 }
 
 .item-due-datetime {
   font-size: 10px;
   color: #5C5D5F;
   font-weight: normal;
-  margin-left: 2px;
 }
 
 .item-priority {

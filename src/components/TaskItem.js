@@ -27,7 +27,9 @@ export default class TaskItem extends React.Component {
                 {/* <div className="item-title">{item.title}</div> */}
                 <div className="item-description">
                     <div>{item.description}</div>
-                    <div className="item-due-datetime"><Moment fromNow>{item.dueDateTime}</Moment></div>
+                    <div className="item-due-datetime"> <Moment format="MMM Do YYYY">
+                        {item.dueDateTime}
+                    </Moment></div>
                 </div>
                 <div className="item-actions">
                     <div className="item-priority">{item.priority}</div>
