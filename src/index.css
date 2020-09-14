@@ -1,13 +1,343 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font: 14px Arial;
+  margin: 20px;
+  background-color: #f2f2f2;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Primary Button */
+
+.primaryButton {
+  background-color: #019191;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s;
+  vertical-align: baseline;
+  opacity: 0.8;
+}
+
+.primaryButton {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.primaryButton:hover {
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.transparentButton {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  opacity: 0.5;
+}
+
+.transparentButton:hover {
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.transparentButton i {
+  font-size: 20px !important;
+  font-weight: normal;
+}
+
+/* END Primary button */
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0px 0px 0px 20px;
+  width: 50%;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.addtask {
+  justify-self: flex-start;
+  align-self: flex-start;
+  height: 100%;
+  width: 90%;
+}
+
+.addtask>div {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 10px 0;
+  width: 100%;
+}
+
+.addtask>div>label {
+  font-size: 12px;
+  color: #5C5D5F;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.addtask>div>input, .addtask>div>select, .addtask>div>textarea {
+  width: 100%;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+}
+
+.addtask>div>input, .addtask>div>select {
+  height: 21px;
+}
+
+.addtask>div>textarea {
+  min-height: 20px !important;
+  max-width: 100%;
+  min-width: 20%;
+}
+
+.modal-content .header {
+  background-color: #019191;
+  margin: 0 0 0 -20px;
+  padding: 10px 0px 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.modal-content .footer {
+  background-color: #019191;
+  width: 100%;
+  margin: 0 0 0 -20px;
+  padding: 5px 10px 5px 10px;
+  color: white;
+  text-align: right;
+}
+
+.modal-content .footer>button.btn-add {
+  background-color: #ffffff;
+  opacity: 1;
+  color: #019191;
+  font-weight: bold;
+}
+
+/* End Modal */
+
+.todo-page {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  /* align-content: center; */
+  align-items: center;
+}
+
+.main-container {
+  flex-direction: column;
+  width: 85%;
+  padding: 2%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.main-container:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.main-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-text {
+  font-size: 21px;
+  font-weight: bold;
+  color: #5C5D5F;
+}
+
+.todo-openlist {
+  margin: 3% 0 3% 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.search-bar input {
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  outline: none;
+  padding-left: 5px;
+}
+
+.search-bar button, .search-bar button i {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.search-bar button i {
+  margin-right: 4px;
+}
+
+.search-bar .transparentButton {
+  width: 30%;
+  border: 1px solid grey;
+  border-radius: 4px;
+  margin-left: 4px;
+  word-wrap: none;
+}
+
+.no-task {
+  line-height: 50px;
+  text-align: center;
+  color: #5C5D5F;
+}
+
+.listitem {
+  height: 2.5em;
+  padding: 5px;
+  align-items: center;
+  margin: 3px 0 3px 0;
+  border-radius: 4px;
+  display: flex;
+}
+
+.listitem:hover {
+  transition: all 0.2s ease-out;
+  /* opacity: 0.8; */
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.listitem.openStatus {
+  background-color: #fbffd5;
+  transition: all 0.4s ease-out;
+}
+
+.listitem.priorityHigh {
+  background-color: #ffe8f4;
+  transition: all 0.4s ease-out;
+}
+
+.listitem.priorityMedium {
+  background-color: #fbffd5;
+  transition: all 0.4s ease-out;
+}
+
+.listitem.priorityLow {
+  background-color: #ffefff;
+  transition: all 0.4s ease-out;
+}
+
+.listitem.closedStatus {
+  background-color: #eafff4;
+  text-decoration: line-through;
+  transition: all 0.4s ease-out;
+}
+
+.item-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* font-weight: bold; */
+  /* color: #5C5D5F; */
+  /* font-size:14px; */
+}
+
+.item-due-datetime {
+  font-size: 10px;
+  color: #5C5D5F;
+  font-weight: normal;
+  margin-left: 2px;
+}
+
+.item-priority {
+  color: grey;
+  border: 1px solid grey;
+  border-radius: 8px;
+  padding: 4px;
+  font-size: 10px;
+  margin: 0 6px 0 6px;
+}
+
+.listitem>div {
+  margin: 0 10px 0 10px;
+  width: 100%;
+}
+
+.listitem>div.item-checkbox {
+  width: fit-content;
+}
+
+.item-checkbox input {
+  height: 1rem;
+  width: 1rem;
+}
+
+.listitem>div.item-actions {
+  width: fit-content;
+  display: flex;
+  align-items:center;
+}
+
+/* media query for mobile scree */
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0 10px 10px 10px;
+    background-color: #ffffff;
+  }
+  .main-container {
+    width: 100%;
+    margin-top: 0;
+    box-shadow: none;
+  }
+  .main-container:hover {
+    box-shadow: none;
+  }
+  .main-container .header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 3px;
+  }
+  .search-bar {
+    justify-content: flex-start;
+  }
+  .search-bar input, .search-bar .transparentButton {
+    width: auto;
+  }
+  .modal-content {
+    width: 90%;
+  }
+  .addtask>div>textarea {
+    height: 50px;
+  }
 }
